@@ -125,6 +125,7 @@ body {
     color: #2E2F42; 
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link:hover {
@@ -133,6 +134,21 @@ body {
 
 .menu-link:focus {
     color: #404BBF;
+}
+
+.menu-link-studio {
+    position: relative;
+}
+
+.menu-link-studio:active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+    bottom: 0;
+    left: 0;
 }
 
 .menu-link-studio:active {
@@ -153,6 +169,7 @@ body {
     letter-spacing: 0.02em;
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover {
@@ -169,6 +186,12 @@ body {
     background-color: #2e2f42;
     padding-top: 188px;
     padding-bottom: 188px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+     rgba(46, 47, 66, 0.7)), 
+     url(/image-hero/people-office.jpg);
+    background-size: 1440px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .hero-title {
@@ -198,6 +221,7 @@ body {
     padding: 16px 32px;
     border-radius: 4px;
     border: 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -209,6 +233,18 @@ body {
 /*============ Benefits Styles ============*/
 .benefits-item {
     width: calc((100% - 72px) / 4);
+}
+
+.benefits-icon-container {
+ display: flex;
+ width: 100%;
+ height: 112px;
+ background-color: #F4F4FD;
+ justify-content: center;
+ align-items: center;
+ margin-bottom: 8px;
+ border: 1px solid #8E8F99;
+ border-radius: 4px;
 }
 
 .benefits-item-title {
@@ -249,6 +285,7 @@ body {
     width: calc((100% - 72px) / 4);
     background-color: #FFFFFF;
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .container-team-item {
@@ -272,7 +309,41 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    margin-bottom: 8px;
 }
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social-list-item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+}
+
+.social-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-list-link:hover {
+    background-color: #404BBF;
+}
+
+.social-list-icon {
+    fill: none;
+    stroke: #F4F4FD;
+}
+
 /*============ Our Team Styles ============*/
 
 /*============ Our Portfolio Styles ============*/
@@ -285,6 +356,16 @@ body {
 
 .portfolio-item {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-item-image {
+    position: relative;
+    overflow: hidden;
 }
 
 .container-portfolio {
@@ -314,9 +395,40 @@ body {
 .portfolio-position {
     padding-left: 16px;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px 164px;
+    color: #F4F4FD;
+    overflow: auto;
+    transform: translateY(100%);
+    background-color: #4D5AE5;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
 /*============ /Our Portfolio Styles ============*/
 
 /*============ Footer Styles ============*/
+.final-page-container {
+    display: flex;
+}
+
+.final-page-logo-content {
+    margin-right: 120px;
+}
+
 .final-page {
     background-color: #2e2f42;
     padding-top: 100px;
@@ -347,4 +459,40 @@ body {
     letter-spacing: 0.02em;
     color: #F4F4FD;
 }
+
+.social-media-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+
+}
+
+.final-page-social-list {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.final-page-social-list-item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+}
+
+.final-page-social-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.final-page-social-list-link:hover {
+    background-color: #31D0AA;
+}
+
 /*============ /Footer Styles ============*/
